@@ -3,21 +3,21 @@ var Wizard = require('../exercises/wizard');
 
 describe('Wizard', function() {
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     assert.isFunction(Wizard);
   });
 
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
     var wizard = new Wizard({name: 'Jhun'});
     assert.equal(wizard.name, 'Jhun');
   });
 
-  it.skip('should have a beard by default', function() {
+  it('should have a beard by default', function() {
     var wizard = new Wizard({name: 'Jhun'});
     assert.equal(wizard.bearded, true);
   });
 
-  it.skip('should not always be bearded', function() {
+  it('should not always be bearded', function() {
     var wizard = new Wizard({name: 'Jhun', bearded: false});
     assert.equal(wizard.bearded, false)
   });
@@ -37,15 +37,20 @@ describe('Wizard', function() {
     // assert isRested returns true
   });
 
-  it.skip('should be able to cast spells', function() {
+  it('should be able to cast spells', function() {
     // create wizard
+    var wizard = new Wizard({name: 'ophus'});
+    assert.equal(wizard.cast('magic bullet'), 'MAGIC BULLET');
     // assert wizard.cast() returns 'MAGIC BULLET'
   });
 
   it.skip('should only be able to cast 3 spells', function() {
     // create wizard
+    var wizard = new Wizard({name: 'ophus'})
     // assert isRested is true
+    assert.equal(wizard.isRested, true);
     // cast()
+    wizard.cast('YO');
     // assert isRested is true
     // cast()
     // assert isRested is true
